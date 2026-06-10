@@ -3,15 +3,7 @@ import { Link } from "react-router-dom";
 import benignityLogo from "../assets/benignity-logo.png";
 import "./DonatePage.css";
 
-const PRESET_AMOUNTS = [25, 50, 100, 250, 500];
-
-const IMPACT = {
-  25:  "Covers essential supplies — linens, toiletries, and comfort items — for a family's stay.",
-  50:  "Funds a full day of peaceful vacation lodging for a patient or caregiver.",
-  100: "Sponsors two nights of restorative lodging for a family in need.",
-  250: "Funds nearly half a week away — real rest, real relief for a caregiver.",
-  500: "Provides a full week of compassionate vacation lodging for a family facing life-limiting illness.",
-};
+const PRESET_AMOUNTS = [50, 100, 250, 500, 1000, 2500];
 
 const CheckIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -28,13 +20,12 @@ const LockIcon = () => (
 
 export default function DonatePage() {
   const [frequency, setFrequency] = useState("once");
-  const [selected, setSelected] = useState(100);
+  const [selected, setSelected] = useState(250);
   const [custom, setCustom] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const isCustom = selected === "custom";
   const displayAmount = isCustom ? custom : selected;
-  const impactText = isCustom ? null : IMPACT[selected];
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -53,9 +44,10 @@ export default function DonatePage() {
           </div>
           <h2>Thank you for your generosity.</h2>
           <p>
-            Your gift of <strong>${displayAmount || "—"}</strong> makes it possible for a
-            family to rest, recover, and create lasting memories. We&apos;ll send a
-            confirmation and tax receipt to your email.
+            Your gift of <strong>${displayAmount || "—"}</strong> makes it
+            possible for an individual facing illness — and the caregiver beside
+            them — to rest, recover, and simply be present with each other. We&apos;ll send a confirmation
+            and tax receipt to your email.
           </p>
           <Link className="btn btn-primary" to="/">Back to Home</Link>
         </div>
@@ -79,11 +71,11 @@ export default function DonatePage() {
         {/* ── LEFT: donation form ── */}
         <div className="dp-form-col">
           <p className="eyebrow">Make a Gift</p>
-          <h1 className="dp-headline">Give a family room to breathe.</h1>
+          <h1 className="dp-headline">Give someone room to breathe.</h1>
           <p className="dp-sub">
-            Your gift provides free vacation lodging for patients with
-            life-limiting illness and unpaid caregivers — creating moments of
-            rest, dignity, and connection that money can&apos;t buy.
+            Your gift provides free vacation lodging for individuals facing
+            life-limiting illness and their unpaid caregivers — creating space
+            to step away, rest, and simply be present with each other.
           </p>
 
           <form onSubmit={handleSubmit}>
@@ -114,7 +106,7 @@ export default function DonatePage() {
                   className={`dp-amt-btn${selected === amt ? " dp-amt-btn--on" : ""}`}
                   onClick={() => { setSelected(amt); setCustom(""); }}
                 >
-                  ${amt}
+                  ${amt.toLocaleString()}
                 </button>
               ))}
               <div className={`dp-custom${isCustom ? " dp-custom--on" : ""}`}>
@@ -122,21 +114,13 @@ export default function DonatePage() {
                 <input
                   type="number"
                   min="1"
-                  placeholder="Custom"
+                  placeholder="Custom amount"
                   value={custom}
                   onChange={e => { setCustom(e.target.value); setSelected("custom"); }}
                   onFocus={() => setSelected("custom")}
                 />
               </div>
             </div>
-
-            {/* Impact message */}
-            {impactText && (
-              <div className="dp-impact-msg">
-                <span className="dp-impact-dot" />
-                <p>{impactText}</p>
-              </div>
-            )}
 
             {/* Donor info */}
             <div className="dp-section-label">Your Information</div>
@@ -160,8 +144,8 @@ export default function DonatePage() {
             {/* Submit */}
             <button type="submit" className="btn btn-primary dp-submit">
               {frequency === "monthly"
-                ? `Give $${displayAmount || "—"} / month`
-                : `Donate $${displayAmount || "—"}`}
+                ? `Give $${displayAmount ? Number(displayAmount).toLocaleString() : "—"} / month`
+                : `Donate $${displayAmount ? Number(displayAmount).toLocaleString() : "—"}`}
             </button>
 
             <div className="dp-secure">
@@ -176,10 +160,11 @@ export default function DonatePage() {
         <div className="dp-impact-col">
           <div className="dp-impact-panel">
             <p className="eyebrow eyebrow--light">Your Impact</p>
-            <h2>Every dollar goes directly to families.</h2>
+            <h2>Every dollar goes directly to those we serve.</h2>
             <p className="dp-impact-intro">
-              Benignity covers 100% of lodging costs for every family we serve.
-              No fees, no hidden charges — just compassionate care.
+              Benignity covers 100% of lodging costs for every individual and
+              caregiver we serve. No fees, no hidden charges — just
+              compassionate care for those who need it most.
             </p>
 
             <div className="dp-tiers">
@@ -190,8 +175,7 @@ export default function DonatePage() {
                   className={`dp-tier${selected === amt ? " dp-tier--on" : ""}`}
                   onClick={() => { setSelected(amt); setCustom(""); window.scrollTo({ top: 0, behavior: "smooth" }); }}
                 >
-                  <strong>${amt}</strong>
-                  <span>{IMPACT[amt]}</span>
+                  <strong>${amt.toLocaleString()}</strong>
                 </button>
               ))}
             </div>
@@ -201,7 +185,7 @@ export default function DonatePage() {
                 "501(c)(3) Nonprofit",
                 "Tax-deductible gift",
                 "Secure & encrypted",
-                "100% goes to families",
+                "100% to those we serve",
               ].map(label => (
                 <div key={label} className="dp-trust-item">
                   <span className="dp-trust-check"><CheckIcon /></span>

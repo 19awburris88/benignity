@@ -251,46 +251,36 @@
 
 /* Tiers */
 .dp-tiers {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   margin-bottom: 32px;
 }
 
 .dp-tier {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
   background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--r-sm);
-  padding: 14px 16px;
-  text-align: left;
+  padding: 14px 10px;
+  text-align: center;
   cursor: pointer;
   font-family: inherit;
   color: var(--white);
-  transition: background 0.18s, border-color 0.18s;
-  width: 100%;
+  transition: background 0.18s, border-color 0.18s, transform 0.15s;
 }
 .dp-tier:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.13);
+  transform: translateY(-2px);
 }
 .dp-tier--on {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.16);
   border-color: var(--gold-light);
 }
 .dp-tier strong {
+  display: block;
   font-size: 1.05rem;
   font-weight: 800;
   color: var(--gold-light);
-  white-space: nowrap;
-  min-width: 38px;
-  margin-top: 1px;
-}
-.dp-tier span {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.55;
 }
 
 /* Trust badges */

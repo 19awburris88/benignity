@@ -123,9 +123,9 @@ function HomePage() {
             <p className="eyebrow">Compassionate care beyond the clinical</p>
             <h1>Giving families room to breathe.</h1>
             <p className="hero-text">
-              Benignity provides peaceful vacation lodging for patients with
-              life-limiting illness and unpaid caregivers — creating space for
-              rest, dignity, and meaningful memories.
+              Benignity provides free vacation lodging for individuals facing
+              life-limiting illness and their unpaid caregivers — creating space
+              to rest, reconnect, and make memories that matter.
             </p>
             <div className="hero-actions">
               <Link className="btn btn-primary" to="/donate">
@@ -141,21 +141,22 @@ function HomePage() {
             <div className="hero-card-badge">Featured Program</div>
             <h3>Compassionate Vacation Lodging</h3>
             <p>
-              Free weeklong stays designed to give families peace, rest, and
-              meaningful time together when it matters most.
+              Free weeklong stays for individuals facing life-limiting illness
+              and the unpaid caregivers who walk alongside them — time to rest,
+              reconnect, and simply be together.
             </p>
             <div className="hero-card-footer">
               <div className="hero-card-item">
                 <span className="check-wrap"><CheckIcon /></span>
-                <span>Completely free to all families</span>
+                <span>Free for individuals & their unpaid caregivers</span>
               </div>
               <div className="hero-card-item">
                 <span className="check-wrap"><CheckIcon /></span>
-                <span>For patients and unpaid caregivers</span>
+                <span>Restorative vacation accommodations</span>
               </div>
               <div className="hero-card-item">
                 <span className="check-wrap"><CheckIcon /></span>
-                <span>Peaceful vacation accommodations</span>
+                <span>No application fees, ever</span>
               </div>
             </div>
           </div>
@@ -194,15 +195,15 @@ function HomePage() {
 
           <div className="mission-body">
             <p className="mission-lead">
-              Benignity exists to ease the emotional and physical weight carried
-              by patients and caregivers navigating life-limiting illness.
+              Benignity exists for individuals navigating life-limiting illness
+              and the unpaid caregivers who love and support them.
             </p>
             <p className="mission-text">
               Through donated lodging, community support, and compassionate
-              partnerships, we help families step away from the clinical
-              environment and step into peace. Because caregivers deserve rest
-              too — and families deserve time together that isn&apos;t defined
-              by illness.
+              partnerships, we help both individuals and their caregivers step
+              away from the weight of illness and into genuine rest. Because
+              everyone touched by a life-limiting diagnosis deserves space to
+              breathe.
             </p>
 
             <div className="mission-pillars">
@@ -293,9 +294,9 @@ function HomePage() {
             <p className="eyebrow eyebrow--light">Why It Matters</p>
             <h2>Caregiving can be heavy. Compassion can make it lighter.</h2>
             <p>
-              Every stay supported through Benignity helps reduce stress, restore
-              dignity, and create moments of genuine connection for families
-              facing the most difficult seasons of their lives.
+              Every stay supported through Benignity gives individuals facing
+              illness and their unpaid caregivers permission to rest — and a
+              reminder that they are seen, valued, and worthy of compassion.
             </p>
             <Link className="btn btn-light" to="/donate">
               Support a Family Today
@@ -328,11 +329,11 @@ function HomePage() {
         <div className="section-inner">
           <div className="section-header section-header--center">
             <p className="eyebrow">Get Involved</p>
-            <h2>Help sponsor a stay for a family in need.</h2>
+            <h2>Help sponsor a stay for someone in need.</h2>
             <p className="section-lead">
               Your support — in any form — helps provide lodging, comfort, and
-              compassionate experiences for patients and caregivers who need time
-              away.
+              genuine rest for individuals facing life-limiting illness and the
+              unpaid caregivers who walk alongside them every day.
             </p>
           </div>
 
@@ -343,8 +344,8 @@ function HomePage() {
               </div>
               <h3>Donate</h3>
               <p>
-                Every dollar directly supports free vacation stays for families
-                facing life-limiting illness.
+                Every dollar directly supports free vacation stays for
+                individuals facing life-limiting illness and their unpaid caregivers.
               </p>
               <Link className="btn btn-white" to="/donate">
                 Donate Now
@@ -358,7 +359,7 @@ function HomePage() {
               <h3>Become a Sponsor</h3>
               <p>
                 Corporate and community sponsorships amplify our reach and create
-                more opportunities for families in need.
+                more opportunities for those who need it most.
               </p>
               <a className="btn btn-outline-dark" href="#contact">Learn More</a>
             </div>
