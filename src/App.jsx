@@ -514,6 +514,22 @@ function HomePage() {
               <img src={benignityLogo} alt="Benignity, Inc." className="logo-img logo-img--footer" />
             </a>
             <p>Compassion. Rest. Relief. Meaningful time away.</p>
+            <div className="footer-social">
+              <a
+                href="https://www.instagram.com/benignityinc/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Benignity on Instagram"
+                className="footer-social-link"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+                </svg>
+                <span>@benignityinc</span>
+              </a>
+            </div>
             <p className="footer-legal">
               Benignity, Inc. is a registered 501(c)(3) nonprofit organization.
             </p>
