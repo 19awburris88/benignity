@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import benignityLogo from "../assets/benignity-logo.png";
 import "./DonatePage.css";
 
@@ -21,6 +21,18 @@ const TRUST_ITEMS = [
 ];
 
 export default function DonatePage() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleMessage = (e) => {
+      if (e.data && e.data.event === "donation_complete") {
+        navigate("/");
+      }
+    };
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, [navigate]);
+
   useEffect(() => {
     if (!DONORBOX_CAMPAIGN_SLUG) return;
     const existing = document.getElementById("donorbox-script");
