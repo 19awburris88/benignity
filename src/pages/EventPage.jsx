@@ -1,10 +1,8 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import benignityLogo from "../assets/benignity-logo.png";
 import "./EventPage.css";
 
-const EVENT_ID = "1988595120537";
-const TRIGGER_ID = "eb-ticket-trigger";
+const EVENTBRITE_URL = "https://www.eventbrite.com/e/1st-annual-first-responders-dating-auction-and-gala-tickets-1988595120537";
 
 const CalendarIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -55,32 +53,6 @@ const StarIcon = () => (
 );
 
 export default function EventPage() {
-  useEffect(() => {
-    const existing = document.getElementById("eb-widget-script");
-    if (existing) {
-      initWidget();
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.id = "eb-widget-script";
-    script.src = "https://www.eventbrite.com/static/widgets/eb_widgets.js";
-    script.async = true;
-    script.onload = initWidget;
-    document.body.appendChild(script);
-  }, []);
-
-  function initWidget() {
-    if (!window.EBWidgets) return;
-    window.EBWidgets.createWidget({
-      widgetType: "checkout",
-      eventId: EVENT_ID,
-      modal: true,
-      modalTriggerElementId: TRIGGER_ID,
-      onOrderComplete: () => {},
-    });
-  }
-
   return (
     <div className="ep">
       {/* NAV */}
@@ -121,9 +93,9 @@ export default function EventPage() {
           </div>
 
           <div className="ep-hero-actions">
-            <button id={TRIGGER_ID} className="btn btn-white ep-ticket-btn">
+            <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="btn btn-white ep-ticket-btn">
               Get Tickets
-            </button>
+            </a>
             <a className="btn btn-outline-light" href="#details">Event Details</a>
           </div>
         </div>
@@ -148,10 +120,9 @@ export default function EventPage() {
                 away, or simply connecting with incredible people, this is one
                 evening you won&apos;t forget.
               </p>
-              <button id={`${TRIGGER_ID}-about`} className="btn btn-primary" style={{marginTop: "8px"}}
-                onClick={() => document.getElementById(TRIGGER_ID)?.click()}>
+              <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{marginTop: "8px"}}>
                 Get Tickets
-              </button>
+              </a>
             </div>
             <div className="ep-about-card">
               <div className="ep-about-mission">
@@ -323,10 +294,9 @@ export default function EventPage() {
             <p className="ep-footer-cta-label">1st Annual First Responders Dating Auction & Gala</p>
             <p className="ep-footer-cta-meta">Aug 1 · 5 PM · Industry, Indianapolis</p>
           </div>
-          <button id={`${TRIGGER_ID}-footer`} className="btn btn-primary"
-            onClick={() => document.getElementById(TRIGGER_ID)?.click()}>
+          <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             Get Tickets
-          </button>
+          </a>
         </div>
       </div>
     </div>
