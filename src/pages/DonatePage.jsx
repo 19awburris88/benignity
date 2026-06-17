@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 import benignityLogo from "../assets/benignity-logo.png";
 import "./DonatePage.css";
 
-// ─── Swap this in once the Donorbox campaign is live ───────────────────────
-// Full URL: https://donorbox.org/your-campaign-slug
-const DONORBOX_CAMPAIGN_SLUG = null;
-// ──────────────────────────────────────────────────────────────────────────
+const DONORBOX_CAMPAIGN_SLUG = "support-benignity-inc";
 
 const CheckIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
