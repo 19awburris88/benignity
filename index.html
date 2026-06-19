@@ -13,5 +13,34 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Hidden form for Netlify form detection (required for React SPAs) -->
+    <form name="benignity-application" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" hidden>
+      <input type="hidden" name="form-name" value="benignity-application" />
+      <input name="bot-field" />
+      <input name="first-name" />
+      <input name="last-name" />
+      <input name="date-of-birth" type="date" />
+      <input name="phone" type="tel" />
+      <input name="email" type="email" />
+      <input name="street-address" />
+      <input name="street-address-2" />
+      <input name="city" />
+      <input name="state" />
+      <input name="zip" />
+      <input name="applicant-type" type="radio" />
+      <input name="patient-name" />
+      <input name="relationship-to-patient" />
+      <input name="diagnosis" />
+      <input name="healthcare-provider" />
+      <select name="number-of-guests"><option>1</option><option>2</option></select>
+      <input name="accessibility-needs" />
+      <input name="special-accommodations" />
+      <textarea name="why-meaningful"></textarea>
+      <input name="physician-statement" type="file" />
+      <input name="terms-accepted" type="checkbox" />
+      <input name="signature" />
+      <input name="signature-date" type="date" />
+    </form>
   </body>
 </html>
