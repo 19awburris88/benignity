@@ -91,7 +91,11 @@ function HomePage() {
     setContactSubmitting(true);
     const data = new FormData(e.target);
     try {
-      await fetch("/", { method: "POST", body: data });
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(data).toString(),
+      });
       setContactSent(true);
     } catch {
       alert("Something went wrong. Please email us directly at compassionateprogram@benignity.org");
