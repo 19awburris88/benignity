@@ -83,6 +83,22 @@ const CheckIcon = () => (
 
 function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [contactSent, setContactSent] = useState(false);
+  const [contactSubmitting, setContactSubmitting] = useState(false);
+
+  async function handleContactSubmit(e) {
+    e.preventDefault();
+    setContactSubmitting(true);
+    const data = new FormData(e.target);
+    try {
+      await fetch("/", { method: "POST", body: data });
+      setContactSent(true);
+    } catch {
+      alert("Something went wrong. Please email us directly at compassionateprogram@benignity.org");
+    } finally {
+      setContactSubmitting(false);
+    }
+  }
   const closeMenu = () => setMenuOpen(false);
 
   return (
@@ -481,44 +497,68 @@ function HomePage() {
             </div>
           </div>
 
-          <form className="contact-form" onSubmit={e => e.preventDefault()}>
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="firstName">First Name</label>
-                <input id="firstName" type="text" placeholder="Jane" />
+          {contactSent ? (
+            <div className="contact-success">
+              <div className="contact-success-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <h3>Message Received</h3>
+              <p>Thank you for reaching out. Someone from our team will be in touch with you shortly.</p>
+            </div>
+          ) : (
+            <form
+              className="contact-form"
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              onSubmit={handleContactSubmit}
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="bot-field" />
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="firstName">First Name</label>
+                  <input id="firstName" name="first-name" type="text" required placeholder="Jane" />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="lastName">Last Name</label>
+                  <input id="lastName" name="last-name" type="text" required placeholder="Doe" />
+                </div>
               </div>
               <div className="form-group">
-                <label htmlFor="lastName">Last Name</label>
-                <input id="lastName" type="text" placeholder="Doe" />
+                <label htmlFor="contactEmail">Email</label>
+                <input id="contactEmail" name="email" type="email" required placeholder="jane@example.com" />
               </div>
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input id="email" type="email" placeholder="jane@example.com" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="interest">I&apos;m interested in&hellip;</label>
-              <select id="interest">
-                <option>Donating</option>
-                <option>Volunteering</option>
-                <option>Becoming a Sponsor</option>
-                <option>Community Partnership</option>
-                <option>Referring a Family</option>
-                <option>General Inquiry</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                placeholder="Tell us how you'd like to get involved or how we can help..."
-                rows="5"
-              />
-            </div>
-            <button type="submit" className="btn btn-primary btn-full">
-              Send Message
-            </button>
-          </form>
+              <div className="form-group">
+                <label htmlFor="interest">I&apos;m interested in&hellip;</label>
+                <select id="interest" name="interest" required>
+                  <option value="">Select one</option>
+                  <option value="Donating">Donating</option>
+                  <option value="Volunteering">Volunteering</option>
+                  <option value="Becoming a Sponsor">Becoming a Sponsor</option>
+                  <option value="Community Partnership">Community Partnership</option>
+                  <option value="Referring a Family">Referring a Family</option>
+                  <option value="General Inquiry">General Inquiry</option>
+                </select>
+              </div>
+              <div className="form-group">
+                <label htmlFor="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  placeholder="Tell us how you'd like to get involved or how we can help..."
+                  rows="5"
+                />
+              </div>
+              <button type="submit" className="btn btn-primary btn-full" disabled={contactSubmitting}>
+                {contactSubmitting ? "Sending…" : "Send Message"}
+              </button>
+            </form>
+          )}
         </div>
       </section>
 
