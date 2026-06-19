@@ -271,6 +271,16 @@ h3 {
   background: var(--teal-dark);
 }
 
+.nav-btn--outline {
+  background: transparent;
+  color: var(--teal);
+  border: 1.5px solid var(--teal);
+}
+.nav-btn--outline:hover {
+  background: var(--teal);
+  color: var(--white);
+}
+
 .hamburger {
   display: none;
   flex-direction: column;

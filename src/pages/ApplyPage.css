@@ -1,0 +1,347 @@
+/* ===== APPLY PAGE ===== */
+.ap {
+  min-height: 100vh;
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero */
+.ap-hero {
+  background: linear-gradient(150deg, var(--teal-dark) 0%, var(--teal-darkest) 100%);
+  padding: 72px 6% 64px;
+}
+
+.ap-hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.ap-hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.ap-hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.75;
+  max-width: 600px;
+}
+
+/* How it works */
+.ap-how {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.ap-how-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 6%;
+  display: flex;
+  gap: 40px;
+}
+
+.ap-step {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.ap-step-num {
+  width: 36px;
+  height: 36px;
+  background: var(--teal);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.88rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.ap-step strong {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.ap-step p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Body */
+.ap-body {
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 56px 6% 80px;
+}
+
+/* Form sections */
+.ap-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ap-section {
+  background: var(--white);
+  border-radius: var(--r-lg);
+  padding: 40px 44px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.ap-section--last {
+  margin-bottom: 0;
+}
+
+.ap-section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.ap-section-num {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--teal);
+  opacity: 0.35;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ap-section-header h2 {
+  font-size: 1.25rem;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.ap-section-header p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Grid */
+.ap-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* Fields */
+.ap-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+
+.ap-field:last-child {
+  margin-bottom: 0;
+}
+
+.ap-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.ap-field label span {
+  color: var(--teal);
+  margin-left: 2px;
+}
+
+.ap-field input,
+.ap-field select,
+.ap-field textarea {
+  background: var(--cream);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 11px 14px;
+  font-size: 0.93rem;
+  font-family: var(--font-body);
+  color: var(--text);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  width: 100%;
+}
+
+.ap-field input::placeholder,
+.ap-field textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.ap-field input:focus,
+.ap-field select:focus,
+.ap-field textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(29, 91, 97, 0.1);
+  background: var(--white);
+}
+
+.ap-field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* File upload */
+.ap-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ap-upload input[type="file"] {
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.ap-upload-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Checkboxes */
+.ap-check-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.ap-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.ap-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--teal);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.ap-checkbox span {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Submit */
+.ap-submit {
+  width: 100%;
+  padding: 16px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.ap-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ap-privacy {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.ap-privacy a {
+  color: var(--teal);
+}
+
+/* Success screen */
+.ap-success {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 6%;
+}
+
+.ap-success-card {
+  max-width: 520px;
+  background: var(--white);
+  border-radius: var(--r-lg);
+  padding: 60px 48px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+}
+
+.ap-success-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--teal);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 24px;
+  padding: 14px;
+  color: white;
+}
+
+.ap-success-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.ap-success-card p {
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+
+.ap-success-sub {
+  font-size: 0.88rem;
+  margin-bottom: 32px !important;
+}
+
+.ap-success-sub a {
+  color: var(--teal);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 700px) {
+  .ap-how-inner {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ap-section {
+    padding: 28px 24px;
+  }
+
+  .ap-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .ap-success-card {
+    padding: 40px 24px;
+  }
+}

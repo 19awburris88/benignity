@@ -4,6 +4,7 @@ import "./index.css";
 import benignityLogo from "./assets/benignity-logo.png";
 import DonatePage from "./pages/DonatePage";
 import EventPage from "./pages/EventPage";
+import ApplyPage from "./pages/ApplyPage";
 
 const PersonIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -101,6 +102,7 @@ function HomePage() {
         </div>
 
         <div className="nav-right">
+          <Link className="nav-btn nav-btn--outline" to="/apply">Apply</Link>
           <Link className="nav-btn" to="/donate">
             Donate
           </Link>
@@ -342,12 +344,26 @@ function HomePage() {
               <div className="involvement-icon">
                 <HeartIcon />
               </div>
+              <h3>Apply for a Stay</h3>
+              <p>
+                Facing a life-limiting illness? You and your unpaid caregiver
+                may qualify for a free vacation stay through our monthly lottery.
+              </p>
+              <Link className="btn btn-white" to="/apply">
+                Apply Now
+              </Link>
+            </div>
+
+            <div className="involvement-card">
+              <div className="involvement-icon">
+                <HeartIcon />
+              </div>
               <h3>Donate</h3>
               <p>
                 Every dollar directly supports free vacation stays for
                 individuals facing life-limiting illness and their unpaid caregivers.
               </p>
-              <Link className="btn btn-white" to="/donate">
+              <Link className="btn btn-outline-dark" to="/donate">
                 Donate Now
               </Link>
             </div>
@@ -542,6 +558,7 @@ function HomePage() {
             <a href="#impact">Impact</a>
             <a href="#events">Events</a>
             <a href="#contact">Contact</a>
+            <Link to="/apply" style={{marginTop: "4px"}}>Apply for a Stay</Link>
           </div>
 
           <div className="footer-contact-col">
@@ -573,6 +590,7 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/donate" element={<DonatePage />} />
+      <Route path="/apply" element={<ApplyPage />} />
       <Route path="/events/gala" element={<EventPage />} />
     </Routes>
   );
