@@ -187,6 +187,18 @@ function HomePage() {
         </div>
       </section>
 
+      {/* WAVE DIVIDER */}
+      <div className="wave-divider" aria-hidden="true">
+        <svg viewBox="0 0 2880 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Wave 1 — primary, repeated twice for seamless loop */}
+          <path className="wave wave-1" d="M0,36 C160,60 320,12 480,36 C640,60 800,12 960,36 C1120,60 1280,12 1440,36 C1600,60 1760,12 1920,36 C2080,60 2240,12 2400,36 C2560,60 2720,12 2880,36" />
+          {/* Wave 2 — offset phase */}
+          <path className="wave wave-2" d="M0,28 C200,52 400,8 600,32 C800,56 1000,4 1200,28 C1400,52 1600,8 1800,32 C2000,56 2200,4 2400,28 C2600,52 2800,8 2880,28" />
+          {/* Wave 3 — slow background */}
+          <path className="wave wave-3" d="M0,44 C240,20 480,64 720,40 C960,20 1200,60 1440,40 C1680,20 1920,60 2160,40 C2400,20 2640,60 2880,40" />
+        </svg>
+      </div>
+
       {/* MISSION */}
       <section id="mission" className="mission">
         <div className="mission-inner">
