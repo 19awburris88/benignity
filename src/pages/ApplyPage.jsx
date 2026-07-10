@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import benignityLogo from "../assets/benignity-logo.png";
 import "./ApplyPage.css";
+
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
 const CheckIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -29,16 +31,62 @@ export default function ApplyPage() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [applicantType, setApplicantType] = useState("");
+  const recaptchaRef = useRef(null);
+  const widgetIdRef = useRef(null);
+
+  // Load and explicitly render the reCAPTCHA widget. Netlify validates the
+  // token server-side using the secret set in the Netlify dashboard.
+  useEffect(() => {
+    if (!RECAPTCHA_SITE_KEY) return;
+    const scriptId = "recaptcha-api";
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = "https://www.google.com/recaptcha/api.js?render=explicit";
+      script.async = true;
+      script.defer = true;
+      document.body.appendChild(script);
+    }
+    const interval = setInterval(() => {
+      if (
+        window.grecaptcha?.render &&
+        recaptchaRef.current &&
+        widgetIdRef.current === null
+      ) {
+        widgetIdRef.current = window.grecaptcha.render(recaptchaRef.current, {
+          sitekey: RECAPTCHA_SITE_KEY,
+        });
+        clearInterval(interval);
+      }
+    }, 200);
+    return () => clearInterval(interval);
+  }, []);
 
   async function handleSubmit(e) {
     e.preventDefault();
+
+    // Require a completed reCAPTCHA before submitting (skipped if no key set,
+    // e.g. local development without the env var).
+    let token = "";
+    if (RECAPTCHA_SITE_KEY) {
+      token = window.grecaptcha?.getResponse(widgetIdRef.current) || "";
+      if (!token) {
+        alert("Please complete the reCAPTCHA verification before submitting.");
+        return;
+      }
+    }
+
     setSubmitting(true);
     const data = new FormData(e.target);
+    if (token) data.append("g-recaptcha-response", token);
     try {
       await fetch("/", { method: "POST", body: data });
       setSubmitted(true);
     } catch {
       alert("Something went wrong. Please try again or email us directly.");
+      if (RECAPTCHA_SITE_KEY && widgetIdRef.current !== null) {
+        window.grecaptcha?.reset(widgetIdRef.current);
+      }
     } finally {
       setSubmitting(false);
     }
@@ -133,6 +181,7 @@ export default function ApplyPage() {
           encType="multipart/form-data"
           data-netlify="true"
           netlify-honeypot="bot-field"
+          data-netlify-recaptcha="true"
           onSubmit={handleSubmit}
           className="ap-form"
         >
@@ -324,6 +373,13 @@ export default function ApplyPage() {
               <label className="ap-label" htmlFor="sign-date">Date <span>*</span></label>
               <input id="sign-date" name="signature-date" type="date" required className="ap-input" />
             </div>
+
+            {/* reCAPTCHA */}
+            {RECAPTCHA_SITE_KEY && (
+              <div className="ap-group">
+                <div ref={recaptchaRef} className="ap-recaptcha" />
+              </div>
+            )}
 
             {/* SUBMIT */}
             <button type="submit" className="btn btn-primary ap-submit" disabled={submitting}>
