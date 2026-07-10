@@ -26,7 +26,7 @@
     </form>
 
     <!-- Hidden form for Netlify form detection (required for React SPAs) -->
-    <form name="benignity-application" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" hidden>
+    <form name="benignity-application" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" enctype="multipart/form-data" hidden>
       <input type="hidden" name="form-name" value="benignity-application" />
       <input name="bot-field" />
       <input name="first-name" />
@@ -52,6 +52,7 @@
       <input name="terms-accepted" type="checkbox" />
       <input name="signature" />
       <input name="signature-date" type="date" />
+      <div data-netlify-recaptcha="true"></div>
     </form>
   </body>
 </html>
