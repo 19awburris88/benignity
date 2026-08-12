@@ -67,7 +67,7 @@ export default function EventPage() {
       <section className="ep-hero">
         <div className="ep-hero-inner">
           <div className="ep-hero-tags">
-            <span>Indianapolis, IN</span>
+            <span>Birmingham, AL</span>
             <span>21+</span>
             <span>Benefiting Benignity, Inc.</span>
           </div>
@@ -80,7 +80,7 @@ export default function EventPage() {
           <div className="ep-hero-meta">
             <div className="ep-meta-item">
               <CalendarIcon />
-              <span>Saturday, August 1, 2025</span>
+              <span>Saturday, October 10, 2026</span>
             </div>
             <div className="ep-meta-item">
               <ClockIcon />
@@ -88,7 +88,7 @@ export default function EventPage() {
             </div>
             <div className="ep-meta-item">
               <MapPinIcon />
-              <span>Industry &mdash; 545 Kentucky Ave., Indianapolis, IN</span>
+              <span>The Harambe Room &mdash; 1815 4th Ave N, 3rd Floor, Birmingham, AL</span>
             </div>
           </div>
 
@@ -156,7 +156,7 @@ export default function EventPage() {
               <div className="ep-expect-icon"><GavelIcon /></div>
               <h3>The Dating Auction</h3>
               <p>
-                Bid on curated dates with Indianapolis&apos;s finest first
+                Bid on curated dates with Birmingham&apos;s finest first
                 responders. Each auction package goes toward supporting families
                 through Benignity, Inc.
               </p>
@@ -201,7 +201,7 @@ export default function EventPage() {
                   <div className="ep-detail-icon"><CalendarIcon /></div>
                   <div>
                     <strong>Date & Time</strong>
-                    <p>Saturday, August 1, 2025</p>
+                    <p>Saturday, October 10, 2026</p>
                     <p>5:00 PM – 8:00 PM (Doors open at 5:00 PM)</p>
                   </div>
                 </div>
@@ -209,10 +209,10 @@ export default function EventPage() {
                   <div className="ep-detail-icon"><MapPinIcon /></div>
                   <div>
                     <strong>Venue</strong>
-                    <p>Industry</p>
-                    <p>545 Kentucky Ave., Indianapolis, IN 46225</p>
+                    <p>The Harambe Room</p>
+                    <p>1815 4th Ave N, 3rd Floor, Birmingham, AL 35203</p>
                     <a
-                      href="https://maps.google.com/?q=545+Kentucky+Ave+Indianapolis+IN+46225"
+                      href="https://maps.google.com/?q=1815+4th+Ave+N+Birmingham+AL+35203"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="ep-map-link"
@@ -277,7 +277,7 @@ export default function EventPage() {
               <h2>Interested in sponsoring the event?</h2>
               <p>
                 Corporate and community sponsors help make this evening possible
-                and amplify the impact for families across Indiana.
+                and amplify the impact for families across Alabama.
               </p>
             </div>
             <Link className="btn btn-white" to="/#contact">
@@ -292,7 +292,7 @@ export default function EventPage() {
         <div className="ep-footer-cta-inner">
           <div>
             <p className="ep-footer-cta-label">1st Annual First Responders Dating Auction & Gala</p>
-            <p className="ep-footer-cta-meta">Aug 1 · 5 PM · Industry, Indianapolis</p>
+            <p className="ep-footer-cta-meta">Oct 10 · 5 PM · The Harambe Room, Birmingham</p>
           </div>
           <a href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             Get Tickets

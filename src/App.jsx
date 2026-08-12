@@ -442,11 +442,11 @@ function HomePage() {
               <div className="event-details">
                 <div className="event-detail">
                   <CalendarIcon />
-                  <span>Saturday, August 1 &nbsp;&bull;&nbsp; 5:00 PM – 8:00 PM</span>
+                  <span>Saturday, October 10 &nbsp;&bull;&nbsp; 5:00 PM – 8:00 PM</span>
                 </div>
                 <div className="event-detail">
                   <MapPinIcon />
-                  <span>Industry &nbsp;&bull;&nbsp; 545 Kentucky Ave., Indianapolis, IN 46225</span>
+                  <span>The Harambe Room &nbsp;&bull;&nbsp; 1815 4th Ave N, 3rd Floor, Birmingham, AL 35203</span>
                 </div>
               </div>
               <div className="event-meta">
