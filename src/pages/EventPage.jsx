@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import benignityLogo from "../assets/benignity-logo.png";
 import "./EventPage.css";
 
-const EVENTBRITE_URL = "https://www.eventbrite.com/e/1st-annual-first-responders-dating-auction-and-gala-tickets-1988595120537";
+const EVENTBRITE_URL = "https://www.eventbrite.com/e/1st-annual-first-responder-dating-auction-gala-tickets-1997256816904";
 
 const CalendarIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
