@@ -623,6 +623,11 @@ function HomePage() {
 
         <div className="footer-bottom">
           <p>© 2025 Benignity, Inc. All rights reserved.</p>
+          <p className="footer-credit">
+            <a href="https://moresmoke.dev" target="_blank" rel="noopener noreferrer">
+              Website by More Smoke Dev
+            </a>
+          </p>
         </div>
       </footer>
     </main>

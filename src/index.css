@@ -1041,6 +1041,19 @@ h3 {
   text-align: center;
 }
 
+.footer-bottom .footer-credit {
+  margin-top: 6px;
+}
+
+.footer-credit a {
+  color: rgba(255, 255, 255, 0.45);
+  transition: color 0.15s;
+}
+
+.footer-credit a:hover {
+  color: var(--white);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1080px) {
   .involvement-grid {
