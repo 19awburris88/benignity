@@ -117,6 +117,7 @@ function HomePage() {
           <a href="#mission" onClick={closeMenu}>Mission</a>
           <a href="#program" onClick={closeMenu}>Program</a>
           <a href="#impact" onClick={closeMenu}>Impact</a>
+          <a href="#story" onClick={closeMenu}>Story</a>
           <a href="#events" onClick={closeMenu}>Events</a>
           <a href="#contact" onClick={closeMenu}>Contact</a>
         </div>
@@ -342,6 +343,26 @@ function HomePage() {
               <strong>Memories</strong>
               <p>Moments families will hold onto and treasure for the rest of their lives.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CAREGIVER STORY */}
+      <section id="story" className="story">
+        <div className="section-inner">
+          <div className="section-header section-header--center">
+            <p className="eyebrow">In Their Words</p>
+            <h2>A caregiver&apos;s story</h2>
+          </div>
+          <div className="story-video">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/7tei8iBnD1c?rel=0"
+              title="A caregiver's story"
+              loading="lazy"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
           </div>
         </div>
       </section>
@@ -600,6 +621,7 @@ function HomePage() {
             <a href="#mission">Mission</a>
             <a href="#program">Program</a>
             <a href="#impact">Impact</a>
+            <a href="#story">Story</a>
             <a href="#events">Events</a>
             <a href="#contact">Contact</a>
             <Link to="/apply" style={{marginTop: "4px"}}>Apply for a Stay</Link>
