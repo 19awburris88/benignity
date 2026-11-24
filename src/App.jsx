@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "./index.css";
 import benignityLogo from "./assets/benignity-logo.png";
+import benignityLogoFooter from "./assets/benignity-logo-footer.png";
 import founderPhoto from "./assets/shellie-harper.jpg";
 import DonatePage from "./pages/DonatePage";
 import EventPage from "./pages/EventPage";
@@ -634,7 +635,7 @@ function HomePage() {
         <div className="footer-inner">
           <div className="footer-brand">
             <a href="#top" className="logo">
-              <img src={benignityLogo} alt="Benignity, Inc." className="logo-img logo-img--footer" />
+              <img src={benignityLogoFooter} alt="Benignity, Inc." className="logo-img logo-img--footer" />
             </a>
             <p>Compassion. Rest. Relief. Meaningful time away.</p>
             <div className="footer-social">
