@@ -655,20 +655,21 @@ h3 {
 }
 
 .story-video {
-  max-width: 960px;
+  width: 100%;
+  max-width: 400px;
   margin: 0 auto;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 568 / 1012;
   border-radius: var(--r-md);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   background: var(--teal-darkest);
 }
 
-.story-video iframe {
+.story-video video {
   display: block;
   width: 100%;
   height: 100%;
-  border: 0;
+  object-fit: cover;
 }
 
 .donate {

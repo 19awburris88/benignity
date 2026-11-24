@@ -355,13 +355,13 @@ function HomePage() {
             <h2>A caregiver&apos;s story</h2>
           </div>
           <div className="story-video">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/7tei8iBnD1c?rel=0"
-              title="A caregiver's story"
-              loading="lazy"
-              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
+            <video
+              src="/videos/caregivers-story.mp4"
+              poster="/videos/caregivers-story-poster.jpg"
+              controls
+              playsInline
+              preload="none"
+              aria-label="A caregiver's story"
             />
           </div>
         </div>
