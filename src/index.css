@@ -537,15 +537,12 @@ h3 {
   border-radius: var(--r-lg);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
-  aspect-ratio: 4 / 5;
 }
 
 .founder-photo img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 15%;
+  height: auto;
 }
 
 .founder-text h2 {
