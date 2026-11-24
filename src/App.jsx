@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "./index.css";
 import benignityLogo from "./assets/benignity-logo.png";
+import founderPhoto from "./assets/shellie-harper.jpg";
 import DonatePage from "./pages/DonatePage";
 import EventPage from "./pages/EventPage";
 import ApplyPage from "./pages/ApplyPage";
@@ -258,6 +259,47 @@ function HomePage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FOUNDER */}
+      <section id="founder" className="founder">
+        <div className="founder-inner">
+          <figure className="founder-photo">
+            <img
+              src={founderPhoto}
+              alt="Shellie Harper, Founder and Executive Director of Benignity, Inc."
+              width="800"
+              height="1424"
+              loading="lazy"
+            />
+          </figure>
+
+          <div className="founder-text">
+            <p className="eyebrow">About the Founder</p>
+            <h2>Shellie Harper</h2>
+            <p className="founder-role">Founder &amp; Executive Director</p>
+            <p>
+              Shellie grew up in Indiana and graduated from Winston-Salem State
+              University with a bachelor&rsquo;s degree in nursing. She also
+              earned an associate degree in Emergency Medical Science and worked
+              for several years as a paramedic. Her faith motivates her to serve
+              others; she has spent over 20 years in nursing across several
+              specialties, with hospice care being her favorite.
+            </p>
+            <p>
+              While working in hospice, Shellie observed caregiver burnout and
+              recognized a need for respite services. Several years later, she
+              founded Benignity, Inc., a 501(c)(3) nonprofit organization that
+              provides free weeklong vacation lodging to individuals with a
+              life-limiting illness and/or their unpaid caregivers.
+            </p>
+            <p>
+              Shellie continues to work as a registered nurse while operating
+              and funding Benignity. She hopes to build strong partnerships,
+              sponsorships, and volunteer opportunities to serve those in need.
+            </p>
           </div>
         </div>
       </section>
@@ -619,6 +661,7 @@ function HomePage() {
           <div className="footer-nav">
             <h4>Navigate</h4>
             <a href="#mission">Mission</a>
+            <a href="#founder">Founder</a>
             <a href="#program">Program</a>
             <a href="#impact">Impact</a>
             <a href="#story">Story</a>

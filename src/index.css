@@ -522,6 +522,61 @@ h3 {
   line-height: 1.55;
 }
 
+/* ===== FOUNDER ===== */
+.founder {
+  background: var(--cream-mid);
+}
+
+.founder-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 6%;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.founder-photo {
+  margin: 0;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 4 / 5;
+}
+
+.founder-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+.founder-text h2 {
+  margin-bottom: 6px;
+}
+
+.founder-role {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+
+.founder-text > p:not(.eyebrow):not(.founder-role) {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 1.02rem;
+  margin-bottom: 18px;
+}
+
+.founder-text > p:last-child {
+  margin-bottom: 0;
+}
+
 /* ===== PROGRAM ===== */
 .program {
   background: var(--white);
@@ -1143,6 +1198,17 @@ h3 {
   .mission-inner {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  .founder-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .founder-photo {
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto;
   }
 
   /* Program */
